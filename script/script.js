@@ -39,22 +39,46 @@ document.querySelector(".container").addEventListener("click", (e) => {
         const meusPontos = document.querySelector("#meusPontos");
         const minhaCartaFinal = parseInt(minhaJogada.getAttribute("value"));
         const cartaBootFinal = parseInt(cartaJogadaBoot.getAttribute("value"));
-        minhaJogada.remove();
-        cartaJogadaBoot.remove();
+
+        minhaJogada.classList.add('animate__flip');
+        minhaJogada.addEventListener('animationend', () => {
+            minhaJogada.remove();
+        });
+
+        cartaJogadaBoot.classList.add('animate__flip');
+        cartaJogadaBoot.addEventListener('animationend', () => {
+            cartaJogadaBoot.remove();
+        });
     
-        let eita = parseInt(pontosBoot.textContent);
-        let eita2 = parseInt(meusPontos.textContent);
+        let boot = parseInt(pontosBoot.textContent);
+        let eu = parseInt(meusPontos.textContent);
     
         document.querySelector("#ultimaJogadaBoot").innerHTML = cartaBootFinal;
         document.querySelector("#ultimaJogadaMinha").innerHTML = minhaCartaFinal;
     
         if(cartaBootFinal > minhaCartaFinal) {
-            pontosBoot.innerHTML = eita + 1;
+            pontosBoot.innerHTML = boot + 1;
         }
     
         if(cartaBootFinal < minhaCartaFinal) {
-            meusPontos.innerHTML = eita2 + 1;
+            meusPontos.innerHTML = eu + 1;
         }   
+
+        if(document.querySelector(".container").childElementCount == 1) {
+            if(meusPontos.textContent == qndCartasLevarei) {
+                alert("Parabéns, voçê não perdeu nenhuma carta!");
+            } 
+
+            if(qndCartasLevarei > meusPontos.textContent) {
+                alert(`você perdeu ${qndCartasLevarei - meusPontos.textContent}!`);
+            }
+
+            if(qndCartasLevarei < meusPontos.textContent) {
+                alert(`você perdeu ${meusPontos.textContent - qndCartasLevarei}!`);
+            }
+            document.location.reload(true);
+        }        
+
     }, (parseInt(Math.random() * ((12 - 1) + 1))) * 1000);
 })
 
