@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Jeca Online</title>
+</head>
+<body>
+    <span id="pontuacao" > 
+        <p> Pontuação: </p> 
+        <p id="pontosBoot"> 0 </p>
+        <p id="meusPontos"> 0 </p>
+    </span>
+    <div class="container"></div>
+    <div class="containerBoot"></div>
+    <span id="ultimasJogadas" > 
+        <p> Ultima Jogada: </p> 
+        <p id="ultimaJogadaBoot"></p>
+        <p id="ultimaJogadaMinha"></p>
+        <lottie-player class="bootPensador" id="bootPensante" src="https://assets7.lottiefiles.com/packages/lf20_vvx2gjpt.json"  background="transparent"  speed="1"  style="width: 5; height: 5; position: absolute; margin-left: 170vh;"  loop  autoplay></lottie-player>
+    </span>
+</body> 
+<script src="../api/index.js"></script>
+<script src="../script/script.js"></script>
+</html>
