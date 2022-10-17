@@ -28,7 +28,9 @@ fetch(url).then((response) => response.json()).then((data) => {
             imgs.classList.add("imgs", "cartasBoot", "animate__animated", "animate__fadeInRightBig");
             containerBoot.appendChild(imgs);
         });   
-        quantasVcLeva()
+        setTimeout(() => {
+            quantasVcLeva();
+        }, 700)
     });
 });
 
